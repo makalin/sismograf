@@ -28,7 +28,7 @@ Sismograf is a collective earthquake monitoring application designed to provide 
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/username/sismograf.git
+   git clone https://github.com/makalin/sismograf.git
    cd sismograf
    ```
 2. **Install Dependencies**
