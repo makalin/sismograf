@@ -1,0 +1,35 @@
+{
+  "name": "sismograf",
+  "version": "1.0.0",
+  "description": "A collective earthquake monitoring application",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd backend && npm start",
+    "client": "cd frontend && npm start",
+    "test": "jest",
+    "lint": "eslint .",
+    "build": "cd frontend && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/makalin/sismograf.git"
+  },
+  "keywords": [
+    "earthquake",
+    "monitoring",
+    "react-native",
+    "nodejs"
+  ],
+  "author": "Makalin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/makalin/sismograf/issues"
+  },
+  "homepage": "https://github.com/makalin/sismograf#readme",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "eslint": "^8.56.0",
+    "jest": "^29.7.0"
+  }
+} 

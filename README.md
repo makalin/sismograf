@@ -24,6 +24,33 @@ Sismograf is a collective earthquake monitoring application designed to provide 
 
 ---
 
+## 📦 **Project Structure**
+
+```
+sismograf/
+├── frontend/                 # React Native frontend
+│   ├── src/
+│   │   ├── screens/         # Screen components
+│   │   ├── components/      # Reusable components
+│   │   ├── services/        # API services
+│   │   └── utils/           # Utility functions
+│   ├── App.js               # Main application component
+│   └── package.json         # Frontend dependencies
+├── backend/                  # Node.js backend
+│   ├── src/
+│   │   ├── routes/          # API routes
+│   │   ├── models/          # Database models
+│   │   ├── controllers/     # Route controllers
+│   │   ├── services/        # Business logic
+│   │   └── tests/           # Test files
+│   ├── index.js             # Server entry point
+│   └── package.json         # Backend dependencies
+├── .gitignore               # Git ignore rules
+└── README.md                # Project documentation
+```
+
+---
+
 ## 📦 **Installation**
 
 1. **Clone the Repository**
@@ -31,19 +58,37 @@ Sismograf is a collective earthquake monitoring application designed to provide 
    git clone https://github.com/makalin/sismograf.git
    cd sismograf
    ```
+
 2. **Install Dependencies**
    ```bash
+   # Install root dependencies
+   npm install
+
+   # Install frontend dependencies
+   cd frontend
+   npm install
+
+   # Install backend dependencies
+   cd ../backend
    npm install
    ```
+
 3. **Set Environment Variables**
    Create a `.env` file in the root directory and add the following keys:
    ```env
-   API_KEY=your_api_key_here
-   DATABASE_URL=your_database_url_here
-   FCM_SERVER_KEY=your_fcm_server_key_here
+   # Backend
+   PORT=5000
+   DATABASE_URL=your_mongodb_url
+   TEST_DATABASE_URL=your_test_mongodb_url
+   FCM_SERVER_KEY=your_fcm_server_key
+
+   # Frontend
+   API_URL=http://localhost:5000
    ```
-4. **Start the Development Server**
+
+4. **Start the Development Servers**
    ```bash
+   # From the root directory
    npm start
    ```
 
@@ -63,8 +108,25 @@ Sismograf is a collective earthquake monitoring application designed to provide 
 | **Method** | **Endpoint**         | **Description**             |
 |------------|---------------------|-----------------------------|
 | GET        | /api/earthquakes     | Get recent earthquake data  |
-| POST       | /api/report          | Submit a user shaking report|
+| GET        | /api/earthquakes/:id | Get specific earthquake     |
+| POST       | /api/reports         | Submit a user shaking report|
 | GET        | /api/history         | Get historical earthquake data|
+
+---
+
+## 🧪 **Testing**
+
+Run tests for both frontend and backend:
+
+```bash
+# Run backend tests
+cd backend
+npm test
+
+# Run frontend tests
+cd ../frontend
+npm test
+```
 
 ---
 
